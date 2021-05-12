@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <NoWarn>$(NoWarn);8632</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BloggingAPI.Infrastructure\BloggingAPI.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
