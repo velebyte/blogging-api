@@ -14,7 +14,7 @@ namespace BloggingAPI.Infrastructure.Repository
         {
         }
 
-        public async Task<List<BlogPost>> GetBlogPosts()
+        public async Task<List<BlogPost>> GetBlogPostsAsync()
         {
             return await GetAll()
                             .Include(bp => bp.Tags)

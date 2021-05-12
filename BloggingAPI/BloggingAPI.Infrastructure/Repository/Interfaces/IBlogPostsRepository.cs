@@ -10,7 +10,7 @@ namespace BloggingAPI.Infrastructure.Repository
         /// Get all latest Blog Posts 
         /// </summary>
         /// <returns></returns>
-        Task<List<BlogPost>> GetBlogPosts();
+        Task<List<BlogPost>> GetBlogPostsAsync();
 
         /// <summary>
         /// Get all recent blog posts filtered by tag

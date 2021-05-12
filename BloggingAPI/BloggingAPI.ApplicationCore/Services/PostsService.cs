@@ -43,7 +43,7 @@ namespace BloggingAPI.ApplicationCore
                 blogPosts = await _blogPostRepository.GetBlogPostsByTagAsync(tagEntity);
             }
             else
-                blogPosts = await _blogPostRepository.GetBlogPosts();
+                blogPosts = await _blogPostRepository.GetBlogPostsAsync();
 
             return blogPosts.ToDTO();
         }

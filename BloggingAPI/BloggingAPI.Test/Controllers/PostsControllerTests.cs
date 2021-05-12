@@ -14,6 +14,7 @@ namespace BloggingAPI.Test.Controllers
     {
         private readonly Mock<IPostsService> _postsServiceStub = new();
 
+        #region GetBlogPostsAsyncTests
         [Fact]
         public async Task GetBlogPostsAsync_WithNoResult_ReturnsNoContent()
         {
@@ -63,7 +64,9 @@ namespace BloggingAPI.Test.Controllers
             foreach (var blogPost in payloadContainer.BlogPosts)
                 Assert.Contains(tag, blogPost.TagList);
         }
+        #endregion
 
+        #region GetBlogPostBySlugAsync
         [Fact]
         public async Task GetBlogPostBySlugAsync_WithNoSlug_ReturnsBadRequest()
         {
@@ -124,8 +127,7 @@ namespace BloggingAPI.Test.Controllers
             var payloadContainer = okObjectResult.Value as BlogPostContainer<BlogPostPayload>;
             Assert.Equal(expectedItem.Slug, payloadContainer.BlogPost.Slug);
         }
-
-
+        #endregion
 
         private BlogPostPayload CreateBlogPostPayload()
         {

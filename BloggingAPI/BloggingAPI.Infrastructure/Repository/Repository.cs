@@ -22,6 +22,9 @@ namespace BloggingAPI.Infrastructure.Repository
             }
             catch (Exception ex)
             {
+                if (ex.InnerException != null)
+                    throw new Exception($"Couldn't retrieve entities: {ex.InnerException.Message}");
+
                 throw new Exception($"Couldn't retrieve entities: {ex.Message}");
             }
         }
@@ -43,6 +46,9 @@ namespace BloggingAPI.Infrastructure.Repository
             }
             catch (Exception ex)
             {
+                if (ex.InnerException != null)
+                    throw new Exception($"{nameof(entity)} could not be saved: {ex.InnerException.Message}");
+
                 throw new Exception($"{nameof(entity)} could not be saved: {ex.Message}");
             }
         }
@@ -64,6 +70,9 @@ namespace BloggingAPI.Infrastructure.Repository
             }
             catch (Exception ex)
             {
+                if (ex.InnerException != null)
+                    throw new Exception($"{nameof(entity)} could not be updated: {ex.InnerException.Message}");
+
                 throw new Exception($"{nameof(entity)} could not be updated: {ex.Message}");
             }
         }
@@ -82,6 +91,9 @@ namespace BloggingAPI.Infrastructure.Repository
             }
             catch (Exception ex)
             {
+                if (ex.InnerException != null)
+                    throw new Exception($"{nameof(entity)} could not be deleted: {ex.InnerException.Message}");
+
                 throw new Exception($"{nameof(entity)} could not be deleted: {ex.Message}");
             }
         }

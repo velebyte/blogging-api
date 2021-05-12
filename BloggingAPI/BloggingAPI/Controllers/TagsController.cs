@@ -11,8 +11,8 @@ namespace BloggingAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Produces("application/json")]
     [Consumes("application/json")]
+    [Produces("application/json")]
     public class TagsController : ControllerBase
     {
         private readonly ITagsService _tagsService;

@@ -14,6 +14,7 @@ namespace BloggingAPI.Controllers
 {
     [ApiController]
     [Route("api/posts")]
+    [Consumes("application/json")]
     [Produces("application/json")]
     public class BlogPostsController : ControllerBase
     {
